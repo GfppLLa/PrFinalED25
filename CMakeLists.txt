@@ -13,8 +13,8 @@ add_executable(${CMAKE_CURRENT_SOURCE_DIR}/src/main.c)
 
 #local do headers
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
-	${CMAKE_CURRENT_SOURCE_DIR}/Modulos
+	${CMAKE_CURRENT_SOURCE_DIR}/src/modules
 	${CMAKE_CURRENT_SOURCE_DIR}/src
-	${CMAKE_CURRENT_SOURCE_DIR}/Bibliotecas
+	${CMAKE_CURRENT_SOURCE_DIR}/libs
 )
 
