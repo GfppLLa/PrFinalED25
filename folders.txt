@@ -1,0 +1,10 @@
+/root/
+|
+|   -> Modulos/
+|   -> Bibliotecas/
+|   ->ARQUIVOS/
+|       |->SWAP/
+|       |->PERMANENTE/
+|->Executavel/
+|
+|
