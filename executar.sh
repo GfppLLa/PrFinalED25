@@ -2,7 +2,7 @@ bash
 
 #!/usr/bin/env bash
 set -euo pipefail
-
+echo "programa de compilacao"
 #nome do executavel
 EXECUTABLE="PrFinalED25"
 #pasta do build
