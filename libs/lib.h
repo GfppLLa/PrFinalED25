@@ -22,9 +22,9 @@ typedef struct TProduto{
   char *nome;
   int codigo;
   float margemLucro;
-  struct TProduto *prox, ant*;
   struct MatProduto *ini_mat; // lista de matérias prima utlizada no produto
-} Produto;
+  struct TProduto *prox, ant*;
+ } Produto;
 
 // protótipos
 
@@ -35,20 +35,23 @@ void lerCSV(FILE *arquivo); // lê um arq csv e escreve-o em lista ou arvore
 int fecharArquivo(FILE *arquivo); // fecha arquivo
 
 // implementação e manipulação de lista duplamente encadeada
-// Produto
+// Lista de Produtos
 Produto *criarProduto(char *nome, float margemLucro);
 Produto *buscarProduto(Produto *head, int codigo); // busca detalhada de um único produto
-void inserirProduto(Produto **head, Produto *novoProduto);
+void inserirProduto(Produto **head, Produto *novoProduto); // inserção ordenada
 void removerProduto(Produto **head, int codigo);
 void editarProduto(Produto **head, int codigo);
 void imprimirProdutos(Produto *head); // mostra uma lista com todos os produtos de forma resumida
 void liberarProdutos(Produto **head); // librar a lista de produtos
 
-// MatProduto
-MatProduto *criarListaMatPrima(int codigo_mat, int qtde); // o codigo daqui deve ser o mesmo de 
+// Lista de Matérias-Prima do Produto - MatProduto
+MatProduto *criarListaMatProd(int codigo_mat, int qtde); // o codigo daqui deve ser o mesmo de 
+void *inserirListaMatProd(MatProduto **head, MatProduto *novoMat);
+void imprimeListaMatProd(MatProduto *head);
+void removeMatProd(MatProduto **head, int codigo);
+void liberarMatProdutos(MatProduto **head);
 
-
-// arvore avl para manipulaçaõ de matéria prima 
+// Arvore Balanceada para Matérias-Prima
 MatPrima *novoNo(char *nome, float preco); // obs* novo->codigo = gerarCodigo(char *str)
 MatPrima *inserirArvore(MatPrima *no, char *nome, float preco);
 MatPrima *rotacaoDir(MatPrima *no);
