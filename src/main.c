@@ -8,16 +8,15 @@ Produto *listaProdutos = NULL;
 
 void main ()
 {
-  abrirArquivos();
-  
-  int opcao = -1;
-  
-  while(opcao != 0)
+  abrirArquivos(); 
+  while(1)
   {
     limparTela();
     exibirMenu();
-    getOpcao(&opcao);
-    opcaoHandler(&produtos, &matérias, opcao);
+    int op = getOpcao();
+    if(op == 0)
+      break;
+    opcaoHandler(&produtos, &matérias, op);
     esperar();
   }
   fecharArquivos();
