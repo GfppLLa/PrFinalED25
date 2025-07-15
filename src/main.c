@@ -1,12 +1,17 @@
 #include "lib.h"
 
+FILE *fpProdutos = NULL;
+FILE *fpMatPrima = NULL;
+
+MatPrima *arvoreMatPrima = NULL;
+Produto *listaProdutos = NULL;
+
 void main ()
 {
-  MatPrima *materiais = (MatPrima*)malloc(sizeof(MatPrima));     // declarar a arvore para matéria prima
-  Produto  *produtos  = (Produto*)malloc(sizeof(Produto));       // declarar a dll para os produtos 
+  abrirArquivos();
   
-  abrirArquivo(<caminho>, <modo>); // tras os dados dos csv para memoria principal
   int opcao = -1;
+  
   while(opcao != 0)
   {
     limparTela();
@@ -15,8 +20,5 @@ void main ()
     opcaoHandler(&produtos, &matérias, opcao);
     esperar();
   }
-
   fecharArquivos();
-  fecharArvore();
-
 }
