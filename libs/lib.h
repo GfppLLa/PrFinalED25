@@ -25,7 +25,10 @@ typedef struct TProduto{
 // protótipos
 
 // leitura e escrita de arquivos
-// abrir para leitura, ler sem escrever, escrever em aqr (a partir de uma DLL ou arvore), fechar 
+FILE* abrirArquivo(const char *caminho, const char *modo); // abre o arquivo para leitura ou escrita
+int escreverCSV(FILE *arquivo, const char *texto); // escreve um csv e retorna flag 
+void lerCSV(FILE *arquivo); // lê um arq csv e escreve-o em lista ou arvore
+int fecharArquivo(FILE *arquivo); // fecha arquivo
 
 // implementação e manipulação de lista duplamente encadeada
 // criar no, inserir no inicio/fim, percorrer, excluir...
@@ -40,6 +43,12 @@ typedef struct TProduto{
 // inserir, excluir e alterar, salvar modificações no arquivo, listar todos, consultar por nome/codigo   
 
 // utilitários
-// menu, limpar tela, obter opcao, handler da opcao, etc
+void menu(); // UI
+void limparTela();
+int getOpcao(); // lê opcao e trata erros antes de retornar
+void opcaoHandler(int opcao);
+int gerarCodigo(char *str); // recebe uma string e retorna um codigo/hash
+float calcularPrecoVenda(float margemLucro, MatPrima *listaMateriais);
+float calcularPrecoCusto(MatPrima* listaMateriais);
 
 #endif

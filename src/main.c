@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include <stdio.h>
 #include "lib.h"
 
@@ -21,3 +22,6 @@ void main ()
   fecharArvore();
 
 }
+=======
+/*aqui sera o entry point*/
+>>>>>>> main
