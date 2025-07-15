@@ -1,10 +1,12 @@
 /root/
 |
-|   -> Modulos/
-|   -> Bibliotecas/
-|   ->ARQUIVOS/
+|   ->build
+|   -> /
+|   -> libs/
+|   ->files/
 |       |->SWAP/
 |       |->PERMANENTE/
-|->Executavel/
+|->src/
+|      |->modules/
 |
 |
