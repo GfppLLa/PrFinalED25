@@ -27,6 +27,18 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
 	${CMAKE_CURRENT_SOURCE_DIR}/libs
 )
 
+#os
+#se windows
+if (WIN32)
+	# Windows-specific settings
+	target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE _WIN32)
+else()
+#se linux
+	# Linux-specific settings
+	target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE _LINUX)
+endif()
+
+
 # Link libraries (if any)
 target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE
 	${CMAKE_CURRENT_SOURCE_DIR}/libs/

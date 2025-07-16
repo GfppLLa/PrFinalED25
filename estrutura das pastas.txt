@@ -1,0 +1,12 @@
+/root/
+|
+|   ->build
+|   -> /
+|   ->libs/
+|   ->files/
+|       |->SWAP/
+|       |->PERMANENTE/
+|->src/
+|      |->modules/
+|
+|
