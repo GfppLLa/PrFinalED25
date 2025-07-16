@@ -16,7 +16,7 @@ void main ()
     int op = getOpcao();
     if(op == 0)
       break;
-    opcaoHandler(&produtos, &matérias, op);
+    opcaoHandler(op);
     esperar();
   }
   fecharArquivos();

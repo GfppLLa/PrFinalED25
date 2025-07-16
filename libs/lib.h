@@ -46,7 +46,7 @@ int fecharArquivos(); // fecha arquivo
 
 // implementação e manipulação de lista duplamente encadeada
 // Lista de Produtos
-Produto *criarProduto(char *nome, float margemLucro);
+Produto *criarProduto();
 Produto *buscarProduto(Produto *head, int codigo); // busca detalhada de um único produto
 void inserirProduto(Produto **head, Produto *novoProduto); // inserção ordenada
 void removerProduto(Produto **head, int codigo);
@@ -55,32 +55,35 @@ void imprimirProdutos(Produto *head); // mostra uma lista com todos os produtos 
 void liberarProdutos(Produto **head); // librar a lista de produtos
 
 // Lista de Matérias-Prima do Produto - MatProduto
-MatProduto *criarListaMatProd(int codigo_mat, int qtde); // o codigo daqui deve ser o mesmo de 
+MatProduto *criarListaMatProd(); //
 void *inserirListaMatProd(MatProduto **head, MatProduto *novoMat);
 void imprimeListaMatProd(MatProduto *head);
 void removeMatProd(MatProduto **head, int codigo);
+void editarMatProd(MatProduto **head, int codigo);
 void liberarMatProdutos(MatProduto **head);
 
 // Arvore Balanceada para Matérias-Prima
-MatPrima *novoNo(char *nome, float preco); // obs* novo->codigo = gerarCodigo(char *str)
-MatPrima *inserirArvore(MatPrima *no, char *nome, float preco);
-MatPrima *rotacaoDir(MatPrima *no);
-MatPrima *rotacaoEsq(MatPrima *no);
-MatPrima *searchFromTree(MatPrima *head, int codigo);
-MatPrima *removeFromTree(MatPrima *head, int codigo);
-MatPrima *editTreeNode(MatPrima *head, int codigo);
+MatPrima *novoNo(); // obs* novo->codigo = gerarCodigo(char *str)
+void *inserirArvore(MatPrima **no, int codigo);
+void *rotacaoDir(MatPrima **no);
+void *rotacaoEsq(MatPrima **no);
+void *searchFromTree(MatPrima **head, int codigo);
+void *removeFromTree(MatPrima **head, int codigo);
+void *editTreeNode(MatPrima **head, int codigo);
 int obterAltura(MatPrima *no);
 void inOrder(MatPrima *head);
 void fecharArvore(MatPrima *head);
 
 // utilitários
-void menu(); // UI
+void menuPrincipal(); // UI
+void menuSecundario();
 void limparTela();
 int getOpcao(); // lê opcao e trata erros antes de retornar
+void opcaoHandler2(int opcao);
 void opcaoHandler(int opcao); // recebe opcaoe direciona para as funcionalidades
-int gerarCodigo(char *str); // recebe uma string e retorna um codigo/hash
-float calcularPrecoVenda(float margemLucro, MatPrima *listaMateriais);
-float calcularPrecoCusto(MatPrima* listaMateriais);
+unsigned int gerarCodigo(char *str); // recebe uma string e retorna um codigo/hash
+float calcularPrecoVenda(float margemLucro, MatProduto *listaMateriais);
+float calcularPrecoCusto(MatProduto* listaMateriais);
 int max(int a, int b); // Retorna o maior entre dois inteiros               
 void esperar(); // espera um enter para continuar o fluxo do programa
 
