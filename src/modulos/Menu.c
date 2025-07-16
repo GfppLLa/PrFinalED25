@@ -1,11 +1,11 @@
-#include "../Bibliotecas/Menu.h"
+#include "../libs/Menu.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../Bibliotecas/Estruturas.h"
-#include "../Bibliotecas/ProdutosLDE.h"
-#include "../Bibliotecas/MateriasPLD.h"
-#include "../Bibliotecas/MateriaPARVOREAVL.h"
+#include "../libs/Estruturas.h"
+#include "../libs/ProdutosLDE.h"
+#include "../libs/MateriasPLD.h"
+#include "../libs/MateriaPARVOREAVL.h"
 
 void menu() {
     printf("\n==== SISTEMA FABRICA ====\n");
