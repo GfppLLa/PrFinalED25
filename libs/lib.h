@@ -67,9 +67,9 @@ MatPrima *novoNo(); // obs* novo->codigo = gerarCodigo(char *str)
 void *inserirArvore(MatPrima **no, int codigo);
 void *rotacaoDir(MatPrima **no);
 void *rotacaoEsq(MatPrima **no);
-void *searchFromTree(MatPrima **head, int codigo);
-void *removeFromTree(MatPrima **head, int codigo);
-void *editTreeNode(MatPrima **head, int codigo);
+MatPrima *buscarMatPrima(MatPrima *head, int codigo);
+MatPrima *excluirMatPrima(MatPrima *head, int codigo);
+MatPrima *editarMatPrima(MatPrima *head, int codigo);
 int obterAltura(MatPrima *no);
 void inOrder(MatPrima *head);
 void fecharArvore(MatPrima *head);

@@ -90,11 +90,28 @@ unsigned int gerarCodigo(char *str) // recebe uma string e retorna um codigo/has
 }
 
 float calcularPrecoVenda(float margemLucro, MatProduto *listaMateriais);
-
+{ // calcularPrecoVenda(produto->margemLucro, produto->ini_mat);
+  float custo = calcularPrecoCusto(listaMateriais);
+  // margemLucro deve ser, por ex., 30.0 para 30%
+  float precoVenda = custo * (1.0 + margemLucro / 100.0);
+  return precoVenda;
+}
 
 float calcularPrecoCusto(MatProduto* listaMateriais)
-{
-  
+{ // calcularPrecoCusto(produto->ini_mat); 
+  MatProduto *atual = listaMateriais;
+  while (atual != NULL) {
+    // Busca na árvore AVL o preço unitário dessa matéria-prima
+      MatPrima *mat = buscarMatPrima(arvoreMatPrima, atual->codigo_mat);
+      if (mat != NULL) {
+          precoTotal += mat->preco * atual->qtde;
+      } else {
+          printf("Matéria-prima de código %d não encontrada!\n", atual->codigo_mat);
+      }
+      atual = atual->prox;
+    }
+
+    return precoTotal;
 }
 
 int max(int a, int b); // Retorna o maior entre dois inteiros               
